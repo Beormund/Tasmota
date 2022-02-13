@@ -164,7 +164,7 @@ be_define_const_str(STATE_DEFAULT, "STATE_DEFAULT", 712406428u, 0, 13, &be_const
 be_define_const_str(TAP_X3A_X20Loaded_X20Tasmota_X20App_X20_X27_X25s_X27, "TAP: Loaded Tasmota App '%s'", 926477145u, 0, 28, NULL);
 be_define_const_str(Tasmota, "Tasmota", 4047617668u, 0, 7, &be_const_str_group_def);
 be_define_const_str(Tele, "Tele", 1329980653u, 0, 4, &be_const_str_color);
-be_define_const_str(Timer, "Timer", 3948127682u, 0, 5, &be_const_str_get_input_power_status);
+be_define_const_str(Trigger, "Trigger", 2783579555u, 0, 7, &be_const_str_set_time);
 be_define_const_str(True, "True", 3453902341u, 0, 4, &be_const_str_screenshot);
 be_define_const_str(Unknown_X20command, "Unknown command", 1830905432u, 0, 15, &be_const_str_content_button);
 be_define_const_str(WS2812, "WS2812", 3539741218u, 0, 6, &be_const_str_remove_driver);
@@ -459,7 +459,7 @@ be_define_const_str(if, "if", 959999494u, 50, 2, NULL);
 be_define_const_str(imax, "imax", 3084515410u, 0, 4, &be_const_str_round_end);
 be_define_const_str(imin, "imin", 2714127864u, 0, 4, &be_const_str_json);
 be_define_const_str(import, "import", 288002260u, 66, 6, NULL);
-be_define_const_str(init, "init", 380752755u, 0, 4, &be_const_str_k);
+be_define_const_str(init, "init", 380752755u, 0, 4, &be_const_str_pc_abs);
 be_define_const_str(init_draw_arc_dsc, "init_draw_arc_dsc", 1655274348u, 0, 17, &be_const_str_number);
 be_define_const_str(init_draw_line_dsc, "init_draw_line_dsc", 2507936040u, 0, 18, &be_const_str_leds);
 be_define_const_str(input, "input", 4191711099u, 0, 5, &be_const_str_wifi_arcs_icon);
@@ -492,7 +492,6 @@ be_define_const_str(json_fdump, "json_fdump", 1694216580u, 0, 10, NULL);
 be_define_const_str(json_fdump_any, "json_fdump_any", 3348629385u, 0, 14, NULL);
 be_define_const_str(json_fdump_list, "json_fdump_list", 3903879853u, 0, 15, &be_const_str_wd);
 be_define_const_str(json_fdump_map, "json_fdump_map", 4091954653u, 0, 14, NULL);
-be_define_const_str(k, "k", 3993778410u, 0, 1, &be_const_str_pc_abs);
 be_define_const_str(keys, "keys", 4182378701u, 0, 4, NULL);
 be_define_const_str(kv, "kv", 1497177492u, 0, 2, &be_const_str_reverse_gamma10);
 be_define_const_str(last_modified, "last_modified", 772177145u, 0, 13, &be_const_str_set_gain);
@@ -511,7 +510,7 @@ be_define_const_str(local, "local", 2621662984u, 0, 5, &be_const_str_wire);
 be_define_const_str(log, "log", 1062293841u, 0, 3, &be_const_str_lv_wifi_bars);
 be_define_const_str(log10, "log10", 2346846000u, 0, 5, &be_const_str__X7Bs_X7DVBus_X20Voltage_X7Bm_X7D_X25_X2E3f_X20V_X7Be_X7D);
 be_define_const_str(loop, "loop", 3723446379u, 0, 4, &be_const_str_set_height);
-be_define_const_str(lower, "lower", 3038577850u, 0, 5, &be_const_str_v);
+be_define_const_str(lower, "lower", 3038577850u, 0, 5, NULL);
 be_define_const_str(lv, "lv", 1529997255u, 0, 2, NULL);
 be_define_const_str(lv_, "lv_", 663721032u, 0, 3, NULL);
 be_define_const_str(lv_clock_icon, "lv_clock_icon", 3257216210u, 0, 13, NULL);
@@ -746,12 +745,13 @@ be_define_const_str(tob64, "tob64", 373777640u, 0, 5, &be_const_str_continue);
 be_define_const_str(tolower, "tolower", 1042520049u, 0, 7, NULL);
 be_define_const_str(tomap, "tomap", 612167626u, 0, 5, NULL);
 be_define_const_str(top, "top", 2802900028u, 0, 3, NULL);
-be_define_const_str(toptr, "toptr", 3379847454u, 0, 5, NULL);
+be_define_const_str(toptr, "toptr", 3379847454u, 0, 5, &be_const_str_trig);
 be_define_const_str(tostring, "tostring", 2299708645u, 0, 8, NULL);
 be_define_const_str(touch_update, "touch_update", 1918102068u, 0, 12, NULL);
 be_define_const_str(toupper, "toupper", 3691983576u, 0, 7, NULL);
 be_define_const_str(tr, "tr", 1195724803u, 0, 2, NULL);
 be_define_const_str(traceback, "traceback", 3385188109u, 0, 9, NULL);
+be_define_const_str(trig, "trig", 2073314619u, 0, 4, NULL);
 be_define_const_str(true, "true", 1303515621u, 61, 4, NULL);
 be_define_const_str(try, "try", 2887626766u, 68, 3, NULL);
 be_define_const_str(try_rule, "try_rule", 1986449405u, 0, 8, NULL);
@@ -763,7 +763,6 @@ be_define_const_str(update, "update", 672109684u, 0, 6, NULL);
 be_define_const_str(upper, "upper", 176974407u, 0, 5, NULL);
 be_define_const_str(url_encode, "url_encode", 528392145u, 0, 10, NULL);
 be_define_const_str(uuid4, "uuid4", 1153582450u, 0, 5, &be_const_str_break);
-be_define_const_str(v, "v", 4077666505u, 0, 1, NULL);
 be_define_const_str(value, "value", 1113510858u, 0, 5, NULL);
 be_define_const_str(value_error, "value_error", 773297791u, 0, 11, NULL);
 be_define_const_str(valuer_error, "valuer_error", 2567947105u, 0, 12, NULL);
@@ -1001,7 +1000,7 @@ static const bstring* const m_string_table[] = {
     (const bstring *)&be_const_str_getbits,
     (const bstring *)&be_const_str_begin,
     NULL,
-    (const bstring *)&be_const_str_Timer,
+    (const bstring *)&be_const_str_get_input_power_status,
     (const bstring *)&be_const_str__persist_X2Ejson,
     NULL,
     (const bstring *)&be_const_str_Restart_X201,
@@ -1214,7 +1213,7 @@ static const bstring* const m_string_table[] = {
     (const bstring *)&be_const_str_pi,
     (const bstring *)&be_const_str_SERIAL_8E2,
     (const bstring *)&be_const_str_exec_cmd,
-    (const bstring *)&be_const_str_set_time,
+    (const bstring *)&be_const_str_Trigger,
     (const bstring *)&be_const_str__X2C_X22AXP192_X22_X3A_X7B_X22VBusVoltage_X22_X3A_X25_X2E3f_X2C_X22VBusCurrent_X22_X3A_X25_X2E1f_X2C_X22BattVoltage_X22_X3A_X25_X2E3f_X2C_X22BattCurrent_X22_X3A_X25_X2E1f_X2C_X22Temperature_X22_X3A_X25_X2E1f_X7D,
     (const bstring *)&be_const_str_solidified,
     NULL,
@@ -1243,6 +1242,6 @@ static const bstring* const m_string_table[] = {
 
 static const struct bconststrtab m_const_string_table = {
     .size = 405,
-    .count = 834,
+    .count = 833,
     .table = m_string_table
 };
