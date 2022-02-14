@@ -61,6 +61,7 @@ static be_define_const_map_slots(be_class_tasmota_map) {
     { be_const_key(exec_rules, -1), be_const_closure(Tasmota_exec_rules_closure) },
     { be_const_key(resp_cmnd_str, -1), be_const_func(l_respCmndStr) },
     { be_const_key(global, 4), be_const_var(8) },
+    { be_const_key(kv, 2), be_const_closure(Tasmota_kv_closure) },
     { be_const_key(add_fast_loop, -1), be_const_closure(Tasmota_add_fast_loop_closure) },
     { be_const_key(resp_cmnd_failed, -1), be_const_func(l_respCmndFailed) },
     { be_const_key(log, -1), be_const_func(l_logInfo) },
@@ -85,7 +86,7 @@ static be_define_const_map_slots(be_class_tasmota_map) {
 
 static be_define_const_map(
     be_class_tasmota_map,
-    80
+    81
 );
 
 BE_EXPORT_VARIABLE be_define_const_class(
